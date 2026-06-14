@@ -1,0 +1,83 @@
+/* =====================================================================
+   MABIN e.V. – Islamisches Theme (nur für die bengalische Seite)
+   Wird zusätzlich zu styles.css geladen und überschreibt gezielt
+   Farben/Verzierungen über den Selektor body.lang-bn.
+   ===================================================================== */
+
+body.lang-bn {
+  --brand:       #15695a;   /* islamisches Grün */
+  --brand-dark:  #0e4a3e;
+  --brand-ink:   #103a31;
+  --gold:        #c9a227;
+  --gold-dark:   #a07d22;
+}
+
+/* Dezentes geometrisches Sternmuster (8-Punkt-Stern) als Hintergrund */
+body.lang-bn .hero,
+body.lang-bn .section--tint {
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%23c9a227' stroke-opacity='0.13' stroke-width='1.1'%3E%3Crect x='17' y='17' width='30' height='30'/%3E%3Crect x='17' y='17' width='30' height='30' transform='rotate(45 32 32)'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 64px 64px;
+}
+body.lang-bn .section--tint { background-color: var(--bg-soft); }
+
+/* Hero-Farbverlauf in Grün/Gold statt der bunten Logo-Töne */
+body.lang-bn .hero::before {
+  background:
+    radial-gradient(440px 440px at 15% 20%, rgba(21,105,90,.18), transparent 60%),
+    radial-gradient(460px 460px at 82% 24%, rgba(201,162,39,.16), transparent 60%),
+    radial-gradient(520px 520px at 60% 92%, rgba(14,74,62,.16), transparent 62%);
+}
+
+/* Akzentfarbe (Eyebrow etc.) ins Gold ziehen */
+body.lang-bn .eyebrow { color: var(--gold-dark); }
+body.lang-bn .hero h1 .accent {
+  background: linear-gradient(120deg, var(--gold-dark), var(--brand) 70%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+/* Ornamentaler Trenner unter zentrierten Überschriften */
+body.lang-bn .section-head.center h2::after {
+  content: ""; display: block; width: 130px; height: 18px; margin: 16px auto 0;
+  background: center/contain no-repeat
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='130' height='18' viewBox='0 0 130 18'%3E%3Cg stroke='%23c9a227' stroke-width='1.4' fill='none'%3E%3Cline x1='0' y1='9' x2='48' y2='9'/%3E%3Cline x1='82' y1='9' x2='130' y2='9'/%3E%3Crect x='59' y='3' width='12' height='12'/%3E%3Crect x='59' y='3' width='12' height='12' transform='rotate(45 65 9)'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Bismillah-Band im Hero */
+body.lang-bn .bismillah {
+  text-align: center; margin: 0 0 18px;
+}
+body.lang-bn .bismillah .ar {
+  display: block; font-size: 1.6rem; color: var(--gold-dark); font-weight: 700;
+  font-family: "Traditional Arabic", "Amiri", "Scheherazade New", serif; line-height: 1.6;
+}
+body.lang-bn .bismillah .tr { display: block; font-size: .9rem; color: var(--muted); margin-top: 2px; }
+
+/* Goldene Akzente an Karten & Buttons */
+body.lang-bn .card { border-top: 3px solid transparent; }
+body.lang-bn .btn--primary { background: var(--brand); }
+body.lang-bn .btn--primary:hover { background: var(--brand-dark); }
+body.lang-bn .btn--ghost { color: var(--brand); border-color: rgba(21,105,90,.4); }
+
+/* Spenden-Button in edlem Gold-Verlauf (statt Koralle) */
+body.lang-bn .btn--donate {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+  box-shadow: 0 10px 24px rgba(201,162,39,.4); color: #2a2208;
+}
+body.lang-bn .btn--donate:hover { box-shadow: 0 14px 30px rgba(201,162,39,.5); color: #2a2208; }
+body.lang-bn .donate-strip { background: linear-gradient(120deg, var(--gold-dark), #7d5f17); }
+body.lang-bn .donate-strip .btn--light { color: var(--gold-dark); }
+
+/* Gebetszeiten-Leiste mit Mond-Akzent */
+body.lang-bn .prayer-bar { background: linear-gradient(135deg, var(--brand-dark), var(--brand)); }
+
+/* Hero-Collage: goldener Rahmen für das Logo-Badge */
+body.lang-bn .hero-collage__badge { box-shadow: 0 0 0 3px var(--gold), var(--shadow-lg); }
+
+/* Galerie-/Foto-Ecken etwas dezenter, goldener Schimmer beim Hover */
+body.lang-bn .gallery-grid figure:hover { box-shadow: 0 0 0 2px var(--gold), var(--shadow); }
+
+/* Dekorative Bogenform oben auf der Glaubens-/Moschee-Fotokarte */
+body.lang-bn #faith .media-photo { border: 2px solid rgba(201,162,39,.5); }
+
+/* Footer-Kreise: dezenter, Fokus auf Grün/Gold-Stimmung bleibt unverändert */

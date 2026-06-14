@@ -1,0 +1,6 @@
+# robots.txt – MABIN e.V.
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://mabin.de/sitemap.xml
